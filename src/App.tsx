@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+const Inputs = () => {
+  const onClickForm = (ev: React.MouseEvent<HTMLFormElement, MouseEvent>) => {
+    console.log('controlled: ', ev.currentTarget)
+    console.log('uncontrolled: ' /* вставить value2 */)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <form onClick={onClickForm}>
+      <input placeholder="controlled" />
+      <input placeholder="uncontrolled" />
+      <button>Отправить заявку на кредит</button>
+    </form>
+  )
 }
 
-export default App;
+export function App() {
+  return (
+    <>
+      <Inputs />
+    </>
+  )
+}
