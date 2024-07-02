@@ -5,12 +5,13 @@ const Inputs = () => {
     console.log('controlled: ', ev.currentTarget)
     console.log('uncontrolled: ' /* вставить value2 */)
   }
-  return (
+  const myRef = React.useRef(null)
+  myRef.current.return(
     <form onClick={onClickForm}>
       <input placeholder="controlled" />
       <input placeholder="uncontrolled" />
       <button>Отправить заявку на кредит</button>
-    </form>
+    </form>,
   )
 }
 
